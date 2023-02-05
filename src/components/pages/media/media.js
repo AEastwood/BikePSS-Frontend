@@ -1,5 +1,5 @@
-import Sidebar from "../sidebar/sidebar";
-import config from "../../config.json";
+import Sidebar from "../../sidebar/sidebar";
+import config from "../../../config.json";
 
 function Media() {
     return (

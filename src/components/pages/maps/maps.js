@@ -1,16 +1,16 @@
-import Sidebar from "../sidebar/sidebar";
-import config from "../../config.json";
+import config from "../../../config.json";
+import Sidebar from "../../sidebar/sidebar";
 
-function Main() {
+function Maps() {
     return (
         <div className="flex h-screen bg-gray-200">
             <Sidebar config={config}/>
 
             <div className="m-auto text-7xl">
-                main
+                maps
             </div>
         </div>
     );
 }
 
-export default Main;
+export default Maps;
