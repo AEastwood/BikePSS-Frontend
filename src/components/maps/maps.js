@@ -6,7 +6,7 @@ function Maps() {
         <div className="flex h-screen bg-gray-200">
             <Sidebar config={config}/>
 
-            <div className="m-auto">
+            <div className="m-auto text-7xl">
                 maps
             </div>
         </div>
