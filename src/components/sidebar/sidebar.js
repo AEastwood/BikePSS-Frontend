@@ -3,8 +3,14 @@ import mediaIcon from './resources/svgs/media.svg';
 import mapIcon from './resources/svgs/maps.svg';
 import settingsIcon from './resources/svgs/settings.svg';
 import {Link} from 'react-router-dom';
+import {useState} from "react";
 
 function Sidebar({config}) {
+    const [connected, setConnected] = useState(false);
+    const ws = new WebSocket(`${config.SIDEBAR.WEBHOOKS.URL}:${config.SIDEBAR.WEBHOOKS.PORT}`);
+
+    ws.onclose = (e) => setConnected(false);
+    ws.onopen = (e) => setConnected(true);
 
     return (
         <div className="h-screen flex">
@@ -17,7 +23,6 @@ function Sidebar({config}) {
                             to="/"
                             className="h-24 px-6 flex flex justify-center items-center w-full"
                         >
-
                             <img className="h-12 w-12" src={mainIcon} alt=""/>
                         </Link>
 
@@ -52,9 +57,15 @@ function Sidebar({config}) {
                 </ul>
 
                 <div className="mt-auto h-16 flex items-center w-full">
-
                     <div className="h-16 w-10 mx-auto flex flex justify-center items-center w-full">
-                        {config.APP.VERSION}
+                        <span
+                            className={
+                                `
+                                    flex w-3 h-3 rounded-full
+                                    ${connected === true ? 'bg-green-500' : 'bg-red-500'}
+                                `
+                            }
+                        />
                     </div>
                 </div>
 

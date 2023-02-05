@@ -7,7 +7,9 @@ function Media() {
             <Sidebar config={config}/>
 
             <div className="m-auto text-7xl">
+
                 media
+
             </div>
         </div>
     );
