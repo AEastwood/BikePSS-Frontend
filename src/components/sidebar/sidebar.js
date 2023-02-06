@@ -46,11 +46,11 @@ function Sidebar() {
 
                     </li>
                     <li
-                        className={`${selectedRoute === '/maps' ? 'bg-gray-100 dark:bg-gray-800' : ''}`}
-                        onClick={() => setSelectedRoute('/maps')}
+                        className={`${selectedRoute === '/navigation' ? 'bg-gray-100 dark:bg-gray-800' : ''}`}
+                        onClick={() => setSelectedRoute('/navigation')}
                     >
                         <Link
-                            to="/maps"
+                            to="/navigation"
                             className="h-24 px-6 flex flex justify-center items-center w-full"
                         >
                             <img className="h-12 w-12" src={mapIcon} alt=""/>

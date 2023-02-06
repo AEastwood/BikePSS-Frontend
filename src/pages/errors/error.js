@@ -1,9 +1,9 @@
-function Maps() {
+function Error() {
     return (
         <div className="m-auto text-7xl">
-            maps
+            not found
         </div>
     );
 }
 
-export default Maps;
+export default Error;
