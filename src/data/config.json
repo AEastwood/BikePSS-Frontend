@@ -8,9 +8,10 @@
     "URL": "https://auth.eastwoodandassociates.co.uk/api/ktm/call"
   },
   "SIDEBAR": {
-    "WEBHOOKS": {
-      "PORT": "6969",
-      "URL": "ws://127.0.0.1"
-    }
+
+  },
+  "WEBSOCKETS": {
+    "IP": "127.0.0.1",
+    "PORT": "6969"
   }
 }
