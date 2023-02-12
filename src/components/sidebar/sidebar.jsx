@@ -3,23 +3,14 @@ import mediaIcon from '../../assets/svgs/media.svg';
 import mapIcon from '../../assets/svgs/maps.svg';
 import settingsIcon from '../../assets/svgs/settings.svg';
 import {Link} from 'react-router-dom';
-import {useContext, useState} from "react";
-import {WebsocketsContext} from "../../context/websockets.context";
+import {useState} from "react";
 
-function Sidebar() {
+function Sidebar({connected}) {
     const [selectedRoute, setSelectedRoute] = useState('/');
-    const ws = useContext(WebsocketsContext);
-    const [connected, setConnected] = useState(false);
-
-    setTimeout(() => {
-        ws.getState() === WebSocket.OPEN ? setConnected(true) : setConnected(false);
-    }, 500);
 
     return (
         <div className="h-screen flex">
-            <aside
-                className="flex flex-col items-center bg-white text-gray-700 dark:bg-gray-700 shadow h-full"
-            >
+            <aside className="flex flex-col items-center bg-white text-gray-700 dark:bg-gray-700 shadow h-full">
                 <ul>
                     <li
                         className={`${selectedRoute === '/' ? 'bg-gray-100 dark:bg-gray-800' : ''}`}
@@ -74,12 +65,7 @@ function Sidebar() {
                 <div className="mt-auto h-16 flex items-center w-full">
                     <div className="h-16 w-10 mx-auto flex flex justify-center items-center w-full">
                         <span
-                            className={
-                                `
-                                    flex w-3 h-3 rounded-full
-                                    ${connected === true ? 'bg-green-500' : 'bg-red-500'}
-                                `
-                            }
+                            className={`flex w-3 h-3 rounded-full ${connected ? 'bg-green-500' : 'bg-red-500'}`}
                         />
                     </div>
                 </div>

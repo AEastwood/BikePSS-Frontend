@@ -1,6 +1,6 @@
 function Media() {
     return (
-        <div className="m-auto text-7xl">
+        <div className="w-full text-7xl">
 
             media
 

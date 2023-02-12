@@ -5,13 +5,14 @@
   },
   "CALL_HOME": {
     "ENABLED": true,
-    "URL": "https://auth.eastwoodandassociates.co.uk/api/ktm/call"
+    "URL": "https://auth.eastwoodandassociates.co.uk/api/ktm/home/call"
   },
   "SIDEBAR": {
 
   },
   "WEBSOCKETS": {
     "IP": "127.0.0.1",
-    "PORT": "6969"
+    "PORT": "6969",
+    "PATH": "api"
   }
 }
