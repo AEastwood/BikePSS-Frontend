@@ -25,7 +25,7 @@ function App() {
     } = useWebSocket(
         `ws://${config.WEBSOCKETS.IP}:${config.WEBSOCKETS.PORT}/${config.WEBSOCKETS.PATH}`,
         {
-            reconnectAttempts: 1000000,
+            reconnectAttempts: Number.MAX_SAFE_INTEGER,
             retryOnError: true,
             onOpen: () => setConnected(true),
             onClose: () => setConnected(false),
