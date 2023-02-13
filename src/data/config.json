@@ -11,7 +11,7 @@
 
   },
   "WEBSOCKETS": {
-    "IP": "127.0.0.1",
+    "IP": "localhost",
     "PORT": "6969",
     "PATH": "api"
   }
