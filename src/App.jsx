@@ -43,18 +43,16 @@ function App() {
 
     return <BrowserRouter>
         <div className="flex h-screen bg-gray-200 dark:bg-gray-900 text-black dark:text-gray-200">
-            <WebhookContext.Provider value={config}>
-                <ConfigContext.Provider value={config}>
-                    <Sidebar connected={connected}/>
-                    <Routes>
-                        <Route path="/" element={<Main/>}> </Route>
-                        <Route path="/media" element={<Media/>}> </Route>
-                        <Route path="/navigation" element={<Maps/>}> </Route>
-                        <Route path="/settings" element={<Settings functions={functions}/>}> </Route>
-                        <Route path="*" element={<Error/>}> </Route>
-                    </Routes>
-                </ConfigContext.Provider>
-            </WebhookContext.Provider>
+            <ConfigContext.Provider value={config}>
+                <Sidebar connected={connected}/>
+                <Routes>
+                    <Route path="/" element={<Main/>}> </Route>
+                    <Route path="/media" element={<Media/>}> </Route>
+                    <Route path="/navigation" element={<Maps/>}> </Route>
+                    <Route path="/settings" element={<Settings functions={functions}/>}> </Route>
+                    <Route path="*" element={<Error/>}> </Route>
+                </Routes>
+            </ConfigContext.Provider>
         </div>
     </BrowserRouter>;
 }
