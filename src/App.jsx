@@ -1,8 +1,7 @@
-import {BrowserRouter, HashRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {useState} from "react";
 import config from "./data/config.json";
 import {ConfigContext} from "./context/config.context";
-import {WebhookContext} from "./context/webhook.context";
 import Error from "./pages/errors/error";
 import Main from "./pages/main/main";
 import Maps from "./pages/navigation/navigation";
@@ -29,7 +28,9 @@ function App() {
             retryOnError: true,
             onOpen: () => setConnected(true),
             onClose: () => setConnected(false),
+            onMessage: (message) => console.log(JSON.parse(message.data)),
             shouldReconnect: () => true,
+            reconnectInterval: 100
         });
 
     const functions = {
