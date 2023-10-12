@@ -1,4 +1,4 @@
-# BikePSS Backend
+# BikePSS Frontend
 
 Some software that will run on a raspberry pi on a KTM Duke 2017.
 
